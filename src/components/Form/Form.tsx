@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { FormControl, FormLabel, FormHelperText } from "@mui/material";
-import GlobalContext from "../context/globalContext";
+import GlobalContext from "../../context/globalContext";
 
 interface FormState {
     name: string;

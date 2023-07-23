@@ -1,7 +1,7 @@
-import React, {useContext, useEffect} from 'react'
+import {useContext, useEffect} from 'react'
 import GlobalContext from '../context/globalContext'
 import { Button, Grid, Typography } from "@mui/material";
-import TableComponent from '../components/TableComponent';
+import TableComponent from '../components/Table/TableComponent';
 
 const Home = () => {
 

@@ -1,5 +1,5 @@
-import React, {useContext, useEffect} from 'react'
-import GlobalContext from "../context/globalContext";
+import {useContext, useEffect} from 'react'
+import GlobalContext from "../../context/globalContext";
 import DataTable from './DataTable';
 
 const TableComponent = () => {

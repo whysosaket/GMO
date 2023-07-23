@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import Form from "../components/Form";
+import { useContext, useEffect } from "react";
+import Form from "../components/Form/Form";
 import { Grid, Typography } from "@mui/material";
 import GlobalContext from "../context/globalContext";
 
