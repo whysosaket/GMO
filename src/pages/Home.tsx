@@ -1,7 +1,9 @@
 import {useContext, useEffect} from 'react'
 import GlobalContext from '../context/globalContext'
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid} from "@mui/material";
 import TableComponent from '../components/Table/TableComponent';
+import Dropdown from '../components/Dropdown/Dropdown';
+import PageTitle from '../components/PageTitle/PageTitle';
 
 const Home = () => {
 
@@ -34,11 +36,10 @@ const Home = () => {
         sx={{ minHeight: "100vh" }}
       >
         
-        <Typography fontWeight={700} variant="h2" component="h2" sx={{my: 2}}>
-            Home
-        </Typography>
-
+        <PageTitle name="Home" />
         <TableComponent />
+        <Dropdown />
+      
       </Grid>
     </>
   )

@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
 import Form from "../components/Form/Form";
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import GlobalContext from "../context/globalContext";
+import PageTitle from "../components/PageTitle/PageTitle";
 
 const Login = () => {
   const { checkIfLoggedIn } = useContext(GlobalContext);
@@ -23,9 +24,7 @@ const Login = () => {
         justifyContent="center"
         sx={{ minHeight: "100vh" }}
       >
-        <Typography fontWeight={700} variant="h2" component="h2">
-          Login
-        </Typography>
+        <PageTitle name="Login" />
         <Form />
       </Grid>
     </div>
