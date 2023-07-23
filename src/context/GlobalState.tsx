@@ -30,7 +30,6 @@ const GlobalState = (props:any) => {
     const fetchData = async () => {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts');
         const data = await response.json();
-        // convert this data to a format that can be used by the table
         const arrayData = data.map((item: Data) => {
             return {
                 id: item.id,

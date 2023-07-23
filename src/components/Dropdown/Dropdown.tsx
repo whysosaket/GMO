@@ -9,7 +9,7 @@ const Dropdown = () => {
     <>
     <PageTitle name="Dropdown - Component 2" />
     <div style={{margin: '2rem'}}>
-      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'lightgray', border: 'blue 1px solid' }}>
         {departments.map((department, index) => (
           <DepartmentItem key={index} department={department} />
         ))}

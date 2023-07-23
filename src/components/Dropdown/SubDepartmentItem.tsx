@@ -1,18 +1,28 @@
 import {useEffect, useState} from 'react';
 import {ListItemText, ListItemButton, Checkbox} from '@mui/material';
 
-const SubDepartmentItem = (props: {subDepartment : string, selected: boolean}) => {
+interface SubDepartmentItemProps {
+  subDepartment : string,
+  subDepartmentSelected: boolean[],
+  handleSubDepartmentSelect: (index: number, selected: boolean)=>void,
+  index: number
+}
+
+const SubDepartmentItem = (props: SubDepartmentItemProps) => {
 
   const subDepartmentName = props.subDepartment;
+  const subDepartmentSelected = props.subDepartmentSelected;
+  const handleSubDepartmentSelect = props.handleSubDepartmentSelect;
 
   const [selected, setSelected] = useState(false);
 
   useEffect(() => {
-    setSelected(props.selected);
-  }, [props.selected]);
+    if(subDepartmentSelected.length === 0) return;
+    setSelected([...subDepartmentSelected][props.index]);
+  }, [subDepartmentSelected]);
 
   const handleSelect = () => {
-    setSelected(!selected);
+    handleSubDepartmentSelect(props.index, !selected);
   };
 
   return (
