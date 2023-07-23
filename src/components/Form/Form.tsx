@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { FormControl, FormLabel, FormHelperText } from "@mui/material";
 import GlobalContext from "../../context/globalContext";
+import { useNavigate } from "react-router-dom";
 
 interface FormState {
     name: string;
@@ -14,11 +15,12 @@ const Form = () => {
   const { performLogin } = useContext(GlobalContext);
   
   const [formState, setFormState] = useState<FormState>({name: '', phoneNumber: '', email: ''});
+  const navigate  = useNavigate();
 
   const handleLogin = () => {
     const {name, phoneNumber, email} = formState;
     performLogin(name, phoneNumber, email);
-    window.location.href = "/home";
+    navigate('/home');
   };
 
   const handleUpdate = (e: React.ChangeEvent<HTMLInputElement>) => {
