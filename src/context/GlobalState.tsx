@@ -1,6 +1,9 @@
+import { useState } from "react";
 import GlobalContext from "./globalContext";
 
 const GlobalState = (props:any) => {
+
+    const [data, setData] = useState([]);
 
     const performLogin = (name: string, phoneNumber: string, email: string) => {
         const userObject = {
@@ -24,8 +27,23 @@ const GlobalState = (props:any) => {
         }
     };
 
+    const fetchData = async () => {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const data = await response.json();
+        // convert this data to a format that can be used by the table
+        const arrayData = data.map((item: Data) => {
+            return {
+                id: item.id,
+                userId: item.userId,
+                title: item.title,
+                body: item.body
+            }
+        });
+        setData(arrayData);
+    };
+
   return (
-    <GlobalContext.Provider value={{performLogin, performLogout, checkIfLoggedIn}}>{props.children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={{performLogin, performLogout, checkIfLoggedIn, fetchData, data}}>{props.children}</GlobalContext.Provider>
   );
 };
 
