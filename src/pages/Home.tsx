@@ -4,21 +4,23 @@ import { Button, Grid} from "@mui/material";
 import TableComponent from '../components/Table/TableComponent';
 import Dropdown from '../components/Dropdown/Dropdown';
 import PageTitle from '../components/PageTitle/PageTitle';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
     const { checkIfLoggedIn, performLogout } = useContext(GlobalContext);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const loggedIn = checkIfLoggedIn();
         if (!loggedIn) {
-            window.location.href = "/";
+            navigate("/login");
         }
     }, []);
 
     const handleLogout = () => {
         performLogout();
-        window.location.href = "/";
+        navigate("/login");
     };
 
   return (

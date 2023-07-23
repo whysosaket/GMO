@@ -3,14 +3,17 @@ import Form from "../components/Form/Form";
 import { Grid } from "@mui/material";
 import GlobalContext from "../context/globalContext";
 import PageTitle from "../components/PageTitle/PageTitle";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { checkIfLoggedIn } = useContext(GlobalContext);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const loggedIn = checkIfLoggedIn();
     if (loggedIn) {
-        window.location.href = "/home";
+      navigate("/home");
     }
   }, []);
 
