@@ -12,7 +12,7 @@ const TableComponent = () => {
 
   return (
     <>
-        <div style={{ height: 400, width: '80%' }}>
+        <div style={{ height: 400, width: '80%', marginBottom: '3rem' }}>
             <DataTable data={data} />
         </div>
     
